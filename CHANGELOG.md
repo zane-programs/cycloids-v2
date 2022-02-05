@@ -1,5 +1,26 @@
 # Changelog
 
+## 2.2.0
+
+### Added
+
+- Install [Matter.js](https://brm.io/matter-js) (physics engine)
+- Install [poly-decomp](https://www.npmjs.com/package/poly-decomp) (decomposes concave polygons into several convex shapes)
+  - This dependency is necessary for Matter.js to draw concave shapes
+- Create wrapper for Matter.js to allow plug-and-play between visualization scripts and the main view
+- Transfer and refactor code from my original tautochrone visualization (as well as some helper functions I created)
+- Begin initial work on tautochrone visualization
+- Create basic (temporary) menu for switching between animations
+
+### Changed
+
+- Remove "Hello, World!" heading on main page
+- Change title in `./src/index.html` to Cycloid Simulations
+
+### Notes
+
+Parcel's dev server doesn't generate a fresh hash on content change, leading the browser to use a cached copy rather than the latest version. I'm investigating!
+
 ## 2.1.2
 
 ### Added

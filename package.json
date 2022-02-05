@@ -1,6 +1,6 @@
 {
   "name": "cycloids-v2",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "My cycloid visualizations (brachistochrone and tautochrone problems)",
   "source": "src/index.html",
   "scripts": {
@@ -19,5 +19,9 @@
   "homepage": "https://github.com/zane-programs/cycloids-v2#readme",
   "devDependencies": {
     "parcel": "^2.2.1"
+  },
+  "dependencies": {
+    "matter-js": "^0.18.0",
+    "poly-decomp": "^0.3.0"
   }
 }
