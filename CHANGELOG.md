@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.1.2
+
+### Added
+
+- Add `name` field to visualizations (backward-compatible)
+- Change page title to `name` field of visualization when called
+- Ensure that visualizations exist before setting page title and running
+
+### Changed
+
+- Removed unnecessary wrapper function in `./src/main.js`
+
 ## 2.1.1
 
 ### Added
