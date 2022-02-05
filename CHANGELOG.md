@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.1
+
+### Added
+
+- Add `/public` (new build directory) to gitignore
+
+### Changed
+
+- Add `--dist-dir public` to build command
+
 ## 2.1.0
 
 ### Added

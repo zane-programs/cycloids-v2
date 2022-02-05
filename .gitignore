@@ -1,5 +1,8 @@
 # Source: https://github.com/github/gitignore/blob/main/Node.gitignore
 
+# My addition: Parcel build folder
+/public
+
 # Logs
 logs
 *.log
