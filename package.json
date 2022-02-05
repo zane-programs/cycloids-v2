@@ -1,0 +1,19 @@
+{
+  "name": "cycloids-v2",
+  "version": "1.0.0",
+  "description": "My cycloid visualizations (brachistochrone and tautochrone problems)",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zane-programs/cycloids-v2.git"
+  },
+  "author": "Zane St. John",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zane-programs/cycloids-v2/issues"
+  },
+  "homepage": "https://github.com/zane-programs/cycloids-v2#readme"
+}
