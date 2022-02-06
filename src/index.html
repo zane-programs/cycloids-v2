@@ -13,13 +13,23 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- my styles -->
+    <link rel="stylesheet" href="styles.css" />
+
     <!-- main -->
     <script type="module" src="main.js"></script>
   </head>
   <body>
     <ul>
-      <li><a href="#brachistochrone">brachistochrone</a></li>
-      <li><a href="#tautochrone">tautochrone</a></li>
+      <li><strong>Choose a simulation:</strong></li>
+      <ul>
+        <li><a href="#brachistochrone">Brachistochrone</a></li>
+        <li><a href="#tautochrone">Tautochrone</a></li>
+      </ul>
     </ul>
+    <main class="render-container">
+      <canvas id="render"></canvas>
+    </main>
+    <div id="console"></div>
   </body>
 </html>

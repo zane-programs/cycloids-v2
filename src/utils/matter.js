@@ -18,22 +18,22 @@ window.decomp = decomp;
 // > "It appears to be because the resolver considers slow collisions
 // > to be 'resting' under a certain threshold. It's possible to lower
 // > the threshold and it seems to fix the issue"  -liabru
-// Because of some strange
+// The resolver's default threshold for slow collisions is too high for
+// my simulation, so I've scaled it down to 0.01. This change ensures
+// that my friction settings for these simulations will work exactly as
+// I expect.
 // See https://github.com/liabru/matter-js/issues/394#issuecomment-289913662
 Resolver._restingThresh = 0.001;
 
-export function generate(renderOptions) {
+export function generate(options) {
   // Create physics engine
-  const engine = Engine.create();
-
-  // TODO: remove hard-coded timeScale
-  // engine.timing.timeScale = 0.3;
+  const engine = Engine.create(options.engineOptions || {});
 
   // Create renderer
   const render = Render.create({
-    element: document.body,
+    canvas: document.getElementById("render"),
     engine: engine,
-    options: renderOptions || { wireframes: false },
+    options: options.renderOptions || { wireframes: false },
   });
 
   // Create runner
@@ -55,6 +55,9 @@ export function clear(engine) {
   // Clear physics engine
   Engine.clear(engine);
 
+  // Reset time-scale
+  engine.timing.timeScale = 1;
+
   // Clear screen
   World.clear(engine.world);
 
@@ -64,7 +67,7 @@ export function clear(engine) {
 
 function _drawGround(engine) {
   // Draw ground
-  const ground = Bodies.rectangle(400, 610, 810, 60, {
+  const ground = Bodies.rectangle(400, 300, 810, 25, {
     isStatic: true,
     friction: 0,
     render: {

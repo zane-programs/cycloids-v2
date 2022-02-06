@@ -1,61 +1,32 @@
 import { Composite, Bodies } from "matter-js";
 
 import {
+  createBall,
   generateVerticesFromParametric,
   parametricCycloid,
 } from "../utils/graphing";
 
 export const name = "Tautochrone";
 
-export function run({ engine, render, runner }) {
-  console.log("Hello from the Tautochrone!");
+export function run({ engine, messageConsole }) {
+  // set timescale for this demo - slow, but not as slow as brachistochrone
+  engine.timing.timeScale = 0.2;
 
-  /* BEGIN CODE BARF */
+  messageConsole.log(
+    "NOTE: The timeScale for the tautochrone simulation is 0.2, meaning 20% speed. Thank you!"
+  );
 
   // create balls
-  var ball1 = Bodies.polygon(23, 100, 80, 10, {
-    friction: 0,
-    frictionAir: 0,
-    frictionStatic: 0,
-    restitution: 0,
-    // zIndex: 5,
-    render: {
-      fillStyle: "red",
-      strokeStyle: "red",
-    },
-  });
-  var ball2 = Bodies.polygon(73 + 300, 220, 80, 10, {
-    friction: 0,
-    frictionAir: 0,
-    frictionStatic: 0,
-    restitution: 0,
-    // zIndex: 5,
-    render: {
-      fillStyle: "#00ff00",
-      strokeStyle: "#00ff00",
-    },
-  });
-  var ball3 = Bodies.polygon(73 + 600, 252, 80, 10, {
-    friction: 0,
-    frictionAir: 0,
-    frictionStatic: 0,
-    restitution: 0,
-    // zIndex: 5,
-    render: {
-      fillStyle: "blue",
-      strokeStyle: "blue",
-    },
-  });
+  const ball1 = createBall(23, 60, 10, "#f00");
+  const ball2 = createBall(373, 180, 10, "#ff0");
+  const ball3 = createBall(673, 212, 10, "#0f0");
 
-  const cycloidVertices = generateVerticesFromParametric(
-    parametricCycloid,
-    0,
-    Math.PI,
-    {
-      step: 1000,
-      scaleFactor: 120,
-    }
-  );
+  const cycloidVertices = generateVerticesFromParametric(parametricCycloid, {
+    from: 0,
+    to: Math.PI,
+    step: 1000,
+    scaleFactor: 120,
+  });
   cycloidVertices.push(
     ...cycloidVertices
       .slice()
@@ -63,7 +34,7 @@ export function run({ engine, render, runner }) {
       .reverse()
   );
 
-  const cycloid = Bodies.fromVertices(200 - 50, 200, cycloidVertices, {
+  const cycloid = Bodies.fromVertices(200 - 50, 160, cycloidVertices, {
     isStatic: true,
     friction: 0,
     render: {
@@ -72,7 +43,7 @@ export function run({ engine, render, runner }) {
     },
   });
 
-  const cycloid2 = Bodies.fromVertices(400 - 50, 200, cycloidVertices, {
+  const cycloid2 = Bodies.fromVertices(400 - 50, 160, cycloidVertices, {
     isStatic: true,
     friction: 0,
     render: {
@@ -81,22 +52,12 @@ export function run({ engine, render, runner }) {
     },
   });
 
-  const cycloid3 = Bodies.fromVertices(600 - 50, 200, cycloidVertices, {
+  const cycloid3 = Bodies.fromVertices(600 - 50, 160, cycloidVertices, {
     isStatic: true,
     friction: 0,
     render: {
       fillStyle: "white",
       strokeStyle: "white",
-    },
-  });
-
-  var ground = Bodies.rectangle(400, 610, 810, 60, {
-    isStatic: true,
-    friction: 0,
-    // chamfer: { radius: 20 },
-    render: {
-      fillStyle: "#cccccc",
-      strokeStyle: "#cccccc",
     },
   });
 
@@ -108,6 +69,5 @@ export function run({ engine, render, runner }) {
     ball1,
     ball2,
     ball3,
-    ground,
   ]);
 }

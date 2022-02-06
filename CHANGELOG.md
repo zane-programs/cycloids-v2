@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.3.0
+
+### Added
+
+- Created full brachistochrone simulation
+- Created sensors for brachistochrone simulation
+- Created "console" for displaying messages on simulation page
+
+### Changed
+
+- Remove dependency on `State.js` (a state management class I made a while ago that's now unnecessary)
+
+### Notes
+
+**This is the final version!**
+
 ## 2.2.0
 
 ### Added
