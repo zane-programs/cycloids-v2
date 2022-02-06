@@ -1,6 +1,6 @@
 {
   "name": "cycloids-v2",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "My cycloid visualizations (brachistochrone and tautochrone problems)",
   "source": "src/index.html",
   "scripts": {
