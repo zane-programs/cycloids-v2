@@ -1,11 +1,11 @@
 {
   "name": "cycloids-v2",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "My cycloid visualizations (brachistochrone and tautochrone problems)",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel -p 3000",
-    "build": "parcel build --dist-dir public"
+    "build": "rimraf public && parcel build --dist-dir public"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "dependencies": {
     "date-fns": "^2.28.0",
     "matter-js": "^0.18.0",
-    "poly-decomp": "^0.3.0"
+    "poly-decomp": "^0.3.0",
+    "rimraf": "^3.0.2"
   }
 }

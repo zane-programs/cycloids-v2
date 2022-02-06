@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.3.1
+
+### Changed
+
+Clear the `public` folder upon build.
+
 ## 2.3.0
 
 ### Added
