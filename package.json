@@ -18,12 +18,12 @@
   },
   "homepage": "https://github.com/zane-programs/cycloids-v2#readme",
   "devDependencies": {
-    "parcel": "^2.2.1"
+    "parcel": "^2.2.1",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "date-fns": "^2.28.0",
     "matter-js": "^0.18.0",
-    "poly-decomp": "^0.3.0",
-    "rimraf": "^3.0.2"
+    "poly-decomp": "^0.3.0"
   }
 }
